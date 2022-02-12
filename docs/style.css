@@ -1,0 +1,70 @@
+/* 表示領域 */
+#disp {
+    background-color: rgb(235, 235, 235);
+    max-width: 600px;
+    min-height: 100vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* ロード中 */
+#loading {
+    text-align: center;
+    line-height: 100vh;
+    font-size: x-large;
+}
+
+
+/* メインコンテンツ */
+#main_content {
+    display: none;
+}
+
+
+/* キャンバス */
+#canvas {
+    display: none;
+    width: 100%;
+}
+
+
+/* 画像 */
+#imageSrc {
+    display: none;
+    width: 100%;
+}
+
+
+/* ボタン認識中 */
+#btnloading {
+    display: none;
+}
+
+
+/* カメラロード中 */
+#camloading {
+    text-align: center;
+    line-height: 50vh;
+    font-size: x-large;
+}
+
+
+/* カメラ映像 */
+#video {
+    width: 100%;
+    height: 50vh;
+    display: none;
+}
+
+
+/* スマホ用のカメラサイズ */
+@media screen and (max-width:480px) {
+    #camloading {
+        line-height: 65vh;
+    }
+
+    #video {
+        height: 65vh;
+    }
+}
