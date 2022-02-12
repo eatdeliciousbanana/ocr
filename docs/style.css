@@ -56,15 +56,3 @@
     height: 50vh;
     display: none;
 }
-
-
-/* スマホ用のカメラサイズ */
-@media screen and (max-width:480px) {
-    #camloading {
-        line-height: 65vh;
-    }
-
-    #video {
-        height: 65vh;
-    }
-}

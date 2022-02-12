@@ -26,10 +26,10 @@ $(function () {
                 video: {
                     width: camWidth,
                     height: camHeight,
-                    facingMode: 'environment'  // どのカメラを利用するか
+                    facingMode: { exact: 'environment' }  // どのカメラを利用するか
                     // facingModeには以下のいずれかの値を入れる
-                    //   facingMode: "user"         // フロントカメラを利用する
-                    //   facingMode: "environment"  // リアカメラを利用する
+                    //   facingMode: 'user'         // フロントカメラを利用する
+                    //   facingMode: { exact: 'environment' }  // リアカメラを利用する
                 }
             };
 
@@ -43,7 +43,7 @@ $(function () {
                     $('#video').show();
                 })
                 .catch((err) => {
-                    alert('カメラへのアクセスを許可してください');
+                    $('#camchange').trigger('click');
                 });
         }, 1000);
     });
@@ -72,10 +72,10 @@ $(function () {
                 camera.stop();
             });
         }
-        if (CONSTRAINTS.video.facingMode === 'environment') {
-            CONSTRAINTS.video.facingMode = 'user';
+        if (CONSTRAINTS.video.facingMode === 'user') {
+            CONSTRAINTS.video.facingMode = { exact: 'environment' };
         } else {
-            CONSTRAINTS.video.facingMode = 'environment';
+            CONSTRAINTS.video.facingMode = 'user';
         }
         navigator.mediaDevices.getUserMedia(CONSTRAINTS)
             .then(stream => {
